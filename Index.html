@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Happy Valentine's Day 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px #ff1493; }
+        }
+        .message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            font-size: 1.2em;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 25px;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-200px) scale(1.5); opacity: 0.5; }
+            100% { transform: translateY(-400px) scale(2); opacity: 0; }
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 500px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Happy Valentine's Day, My Love! 💖</h1>
+    <div class="message">
+        <h2>💖 Gửi em yêu của anh, người đặc biệt nhất trên thế gian này! 💖</h2>
+        <p>Em yêu à, chúc em một ngày Valentine thật hạnh phúc! 💕</p>
+        <p>Hôm nay là Valentine, nhưng với anh, mỗi ngày có em đều là một ngày ngọt ngào và tràn đầy yêu thương.</p>
+        <p> 💕 Em là điều tuyệt vời nhất mà anh có, là ánh sáng sưởi ấm trái tim anh mỗi ngày.</p>
+        <p>  Tình yêu của anh dành cho em không chỉ nằm trong những lời nói, mà còn trong từng ánh mắt, từng cái ôm, từng nhịp tim rộn ràng khi nghĩ về em.</p>
+        <p>Cảm ơn em đã đến bên anh, mang theo bao nhiêu yêu thương, hạnh phúc và những điều đẹp đẽ nhất.</p>
+        <p>Chỉ cần có em, mọi khoảnh khắc đều trở nên ý nghĩa hơn. Anh mong rằng hôm nay và mãi về sau, em luôn cười thật tươi, luôn hạnh phúc, và luôn biết rằng có một người yêu em hơn tất cả mọi thứ trên đời này – chính là anh! 😘</p>
+        <p>💖 Chúc em một ngày Valentine tràn đầy yêu thương! 💖
+            Anh yêu em rất nhiều! ❤️</p>
+    </div>
+    <div class="slideshow-container">
+        <div class="slide"><img src="./anhvaem.jpg" alt="Love 1"></div>
+        <div class="slide"><img src="./z6316831660649_f8ba065717bf6ba88a14f7b015add945.jpg" alt="Love 2"></div>
+        <div class="slide"><img src="./z6316831674273_411b9b54d7675309418a2af541d03c1a.jpg" alt="Love 3"></div>
+    </div>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.classList.add('heart');
+            document.body.appendChild(heart);
+            
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+        
+        let slideIndex = 0;
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    if (slides.length === 0) return;
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    slides[slideIndex].style.display = "block"; // Đảm bảo hiển thị một ảnh
+    slideIndex = (slideIndex + 1) % slides.length; // Lặp lại slideshow
+    
+    setTimeout(showSlides, 3000);
+}
+showSlides();
+
+    </script>
+</body>
+</html>
